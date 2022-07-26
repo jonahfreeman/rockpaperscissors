@@ -13,3 +13,35 @@ const choiceBtn = document.querySelectorAll('#choiceBtn');
 let player;
 let computer;
 let result;
+
+// Player input is defined here by adding an eventlistener for each button and then assigning the string within the button to the variable player
+choiceBtn.forEach(button => button.addEventListener('click', () => {
+//variable player equals whatever the content of the clocked button is
+    player = button.textContent;
+//Invoke the computers turn function, defined below
+    computerTurn();
+// make the headers display the content of the variables for each player and computer
+    playerText.textContent = `Player: ${player}`;
+    computerText.textContent = `Computer: ${computer}`;
+// invoke function to fill the result tab with a result
+    resultText.textContent = checkWinner();
+}));
+
+
+//function uses random math from 1-3 and assigns rock paper and scissors to each number, creating the computers choices
+function computerTurn() {
+    const randNum = Math.floor(Math.random * 3) + 1;
+    switch(randNum) {
+        case 1: 
+            computer = 'Rock';
+            break;
+        case 2 :
+            computer = 'Paper';
+            break;
+        case 3:
+            computer = 'Scissors';
+            break;
+    }
+}
+
+
