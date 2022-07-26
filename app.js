@@ -45,3 +45,18 @@ function computerTurn() {
 }
 
 
+function checkWinner() {
+    if (player == computer) {
+        return 'Draw!';
+    }
+    else if (computer == 'Rock') {
+        return (player == 'Paper') ? "You win!" : "You lose!";
+    }
+    else if (computer == 'Paper') {
+        return (player == 'Scissors') ? "You win!" : "You lose!";
+    }
+    else if (computer == 'Scissors') {
+        return (player == 'Rock') ? "You win!" : "You lose!";
+    }
+}
+
