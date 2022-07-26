@@ -30,7 +30,9 @@ choiceBtn.forEach(button => button.addEventListener('click', () => {
 
 //function uses random math from 1-3 and assigns rock paper and scissors to each number, creating the computers choices
 function computerTurn() {
-    const randNum = Math.floor(Math.random * 3) + 1;
+    
+    const randNum = Math.floor(Math.random() * 3) + 1;
+    
     switch(randNum) {
         case 1: 
             computer = 'Rock';
